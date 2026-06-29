@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    header
+      h1 My Pets Collection
+    main
+      a.btn(href='/update-cobj') Add to this table
+      if data && data.length
+        table
+          thead
+            tr
+              th Name
+              th Species
+              th Bio
+          tbody
+            each item in data
+              tr
+                td= item.properties.name
+                td= item.properties.species
+                td= item.properties.bio
+      else
+        p.empty No records found. Use the button above to add some pets!
