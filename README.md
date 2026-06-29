@@ -1,28 +1,66 @@
-# Welcome to the Integrating With HubSpot I: Foundations Practicum
+# Integrating With HubSpot I: Foundations Practicum
+## Thiago Matheus — HubSpot Academy Practicum Repository
 
-This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
+This repository is the completed practicum submission for the **Integrating With HubSpot I: Foundations** certification.
 
-To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
+---
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+## Custom Object: Pets
 
-___
-## Tips:
-- Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
+This practicum uses a custom object called **Pets** with the following properties:
+- `name` (string) — The name of the pet
+- `species` (string) — The species/type of pet (e.g., Dog, Cat, Bird)
+- `bio` (string) — A short biography of the pet
+
+---
+
+## Custom Object List View
+
+**Put your HubSpot developer test account custom objects URL link here:**
+https://app.hubspot.com/contacts/YOUR-ACCOUNT-ID/objects/YOUR-CUSTOM-OBJECT-ID/views/all/list
+
+> ⚠️ Replace YOUR-ACCOUNT-ID and YOUR-CUSTOM-OBJECT-ID with your actual test account values after setting up the HubSpot developer test account.
+
+---
+
+## Setup Instructions
+
+1. Clone this repository to your local environment
+2. Create a `.env` file in the root directory with the following variables:
+   ```
+   PRIVATE_APP_ACCESS=your_private_app_access_token_here
+   CUSTOM_OBJECT_TYPE=your_custom_object_type_id_here
+   ```
+3. Run `npm install` to install dependencies
+4. Run `node index.js` to start the server
+5. Open `http://localhost:3000` in your browser
+
+---
+
+## Routes
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Homepage — displays all Pets records in a table |
+| GET | `/update-cobj` | Form to add a new Pet record |
+| POST | `/update-cobj` | Submits the form and creates a new record, then redirects to homepage |
+
+---
+
+## Technologies Used
+
+- Node.js
+- Express
+- Axios
+- Pug (template engine)
+- dotenv
+- HubSpot CRM API v3
+
+---
+
+## Tips
+
+- Commit to your repository often.
 - The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
+- Please create a test account. **DO NOT include your private app access token in your repo.**
 - Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
-
-## Pre-requisites:
-- Using [Node](https://nodejs.org/en/download) and node packages
-- Using [Express](https://expressjs.com/en/starter/installing.html)
-- Using [Axios](https://axios-http.com/docs/intro)
-- Using [Pug templating system](https://pugjs.org/api/getting-started.html)
-- Using the command line
-- Using [Git and GitHub](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
-
-## Requirements
-- All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
-- You must have at least two new routes in your index.js file and one new pug template for the homepage.
-- You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
