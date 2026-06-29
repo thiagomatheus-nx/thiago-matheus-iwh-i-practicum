@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    header
+      h1 Add a New Pet Record
+    main
+      a.btn-back(href='/') Return to the homepage
+      form(action='/update-cobj' method='POST')
+        div.form-group
+          label(for='name') Name
+          input(type='text' id='name' name='name' placeholder='Enter pet name' required)
+        div.form-group
+          label(for='species') Species
+          input(type='text' id='species' name='species' placeholder='e.g. Dog, Cat, Bird')
+        div.form-group
+          label(for='bio') Bio
+          textarea(id='bio' name='bio' rows='4' placeholder='Describe this pet...')
+        button(type='submit') Add Pet
